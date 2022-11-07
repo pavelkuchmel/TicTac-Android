@@ -9,7 +9,7 @@ public class Game {
     private Player player2;
     private Player current;
     public String nextInfo = "test";
-    public char mark = ' ';
+    public String mark = " ";
     public Game(){}
     public Game(String nameFirst, String nameSecond) {
         player1 = new Player(nameFirst, 'X');
@@ -26,7 +26,7 @@ public class Game {
         else {
             current = player2;
         }
-        mark = current.mark;
+        mark = current.getSymbolString();
         return current;
     }
     public void turn(int x, int y){
@@ -54,12 +54,12 @@ public class Game {
         else {
             if (current.equals(player1)) {
                 current = player2;
-                mark = current.mark;
+                mark = current.getSymbolString();
                 nextInfo = "Ходит " + current.getName() + ": ";
             }
             else {
                 current = player1;
-                current.getSymbol();
+                mark = current.getSymbolString();
                 nextInfo = "Ходит " + current.getName() + ": ";
             }
             return false;

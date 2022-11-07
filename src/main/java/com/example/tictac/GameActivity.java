@@ -24,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
         TextView t1 = findViewById(R.id.t1);
         TextView t2 = findViewById(R.id.t2);
         TextView t3 = findViewById(R.id.t3);
-        t2.setText(game.start().getName());
+        t2.setText(game.start().getName() + " ходит: ");
         Button b11 = findViewById(R.id.b_1_1);
         b11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +49,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(0, 1);
+                b12.setText(game.mark);
                 b12.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -59,6 +60,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(0, 2);
+                b13.setText(game.mark);
                 b13.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -69,6 +71,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(1, 0);
+                b21.setText(game.mark);
                 b21.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -79,6 +82,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(1, 1);
+                b22.setText(game.mark);
                 b22.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -89,6 +93,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(1, 2);
+                b23.setText(game.mark);
                 b23.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -99,6 +104,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(2, 0);
+                b31.setText(game.mark);
                 b31.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -109,6 +115,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(2, 1);
+                b32.setText(game.mark);
                 b32.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);
@@ -119,6 +126,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game.turn(2, 2);
+                b33.setText(game.mark);
                 b33.setEnabled(false);
                 game.check();
                 t2.setText(game.nextInfo);

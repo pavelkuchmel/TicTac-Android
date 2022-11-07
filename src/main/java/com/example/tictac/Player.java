@@ -7,6 +7,9 @@ public class Player extends  Game{
             this.name = name;
             this.symbol = symbol;
         }
+        public String getSymbolString(){
+            return symbol+"";
+        }
         public char getSymbol(){
             System.err.println("method getSymbol (Player class) - ok");
             return symbol;
