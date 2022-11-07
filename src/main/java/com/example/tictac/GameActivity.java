@@ -23,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
         Game game = finalGame;
         TextView t1 = findViewById(R.id.t1);
         TextView t2 = findViewById(R.id.t2);
-        TextView t3 = findViewById(R.id.t3);
+        Button exit = findViewById(R.id.btn_exit);
         t2.setText(game.start().getName() + " ходит: ");
         Button b11 = findViewById(R.id.b_1_1);
         b11.setOnClickListener(new View.OnClickListener() {
@@ -32,13 +32,10 @@ public class GameActivity extends AppCompatActivity {
                 try {
                     game.turn(0, 0);
                     b11.setText(game.mark);
-                    //System.err.println("onClick from b11 - game.turn - ok");
                     b11.setEnabled(false);
-                    //System.err.println("onClick from b11 - b11.setEnabled - ok");
-                    game.check();
-                    //System.err.println("onClick from b11 - game.check - ok");
+                    //game.check();
+                    if (game.check()) exit.setVisibility(View.VISIBLE);
                     t2.setText(game.nextInfo);
-                    //System.err.println("onClick from b11 - t2.setText - ok");
                 }catch (Exception e){
                     System.out.println(e.getMessage());
                 }
@@ -51,7 +48,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(0, 1);
                 b12.setText(game.mark);
                 b12.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -62,7 +60,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(0, 2);
                 b13.setText(game.mark);
                 b13.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -73,7 +72,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(1, 0);
                 b21.setText(game.mark);
                 b21.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -84,7 +84,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(1, 1);
                 b22.setText(game.mark);
                 b22.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -95,7 +96,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(1, 2);
                 b23.setText(game.mark);
                 b23.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -106,7 +108,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(2, 0);
                 b31.setText(game.mark);
                 b31.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -117,7 +120,8 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(2, 1);
                 b32.setText(game.mark);
                 b32.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
@@ -128,12 +132,22 @@ public class GameActivity extends AppCompatActivity {
                 game.turn(2, 2);
                 b33.setText(game.mark);
                 b33.setEnabled(false);
-                game.check();
+                //game.check();
+                if (game.check()) exit.setVisibility(View.VISIBLE);
                 t2.setText(game.nextInfo);
             }
         });
 
-
-
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exit.setTextSize(18);
+                exit.setText("Нажмите второй раз для выхода");
+                onDestroy();
+            }
+        });
+    }
+    static void exitEnableAllButton(Game game, Button exit){
+        if (game.check()) exit.setVisibility(View.VISIBLE);
     }
 }
