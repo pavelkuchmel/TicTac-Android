@@ -8,7 +8,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
-
+    Button b11;
+    Button b12;
+    Button b13;
+    Button b21;
+    Button b22;
+    Button b23;
+    Button b31;
+    Button b32;
+    Button b33;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Bundle arguments = getIntent().getExtras();
@@ -25,7 +33,7 @@ public class GameActivity extends AppCompatActivity {
         TextView t2 = findViewById(R.id.t2);
         Button exit = findViewById(R.id.btn_exit);
         t2.setText(game.start().getName() + " ходит: ");
-        Button b11 = findViewById(R.id.b_1_1);
+        b11 = findViewById(R.id.b_1_1);
         b11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,14 +42,17 @@ public class GameActivity extends AppCompatActivity {
                     b11.setText(game.mark);
                     b11.setEnabled(false);
                     //game.check();
-                    if (game.check()) exit.setVisibility(View.VISIBLE);
+                    if (game.check()) {
+                        allButtonEnable();
+                        exit.setVisibility(View.VISIBLE);
+                    }
                     t2.setText(game.nextInfo);
                 }catch (Exception e){
                     System.out.println(e.getMessage());
                 }
             }
         });
-        Button b12 = findViewById(R.id.b_1_2);
+        b12 = findViewById(R.id.b_1_2);
         b12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,11 +60,14 @@ public class GameActivity extends AppCompatActivity {
                 b12.setText(game.mark);
                 b12.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b13 = findViewById(R.id.b_1_3);
+        b13 = findViewById(R.id.b_1_3);
         b13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,11 +75,14 @@ public class GameActivity extends AppCompatActivity {
                 b13.setText(game.mark);
                 b13.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b21 = findViewById(R.id.b_2_1);
+        b21 = findViewById(R.id.b_2_1);
         b21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,11 +90,14 @@ public class GameActivity extends AppCompatActivity {
                 b21.setText(game.mark);
                 b21.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b22 = findViewById(R.id.b_2_2);
+        b22 = findViewById(R.id.b_2_2);
         b22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,11 +105,14 @@ public class GameActivity extends AppCompatActivity {
                 b22.setText(game.mark);
                 b22.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b23 = findViewById(R.id.b_2_3);
+        b23 = findViewById(R.id.b_2_3);
         b23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,11 +120,14 @@ public class GameActivity extends AppCompatActivity {
                 b23.setText(game.mark);
                 b23.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b31 = findViewById(R.id.b_3_1);
+        b31 = findViewById(R.id.b_3_1);
         b31.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,11 +135,14 @@ public class GameActivity extends AppCompatActivity {
                 b31.setText(game.mark);
                 b31.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b32 = findViewById(R.id.b_3_2);
+        b32 = findViewById(R.id.b_3_2);
         b32.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,11 +150,14 @@ public class GameActivity extends AppCompatActivity {
                 b32.setText(game.mark);
                 b32.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
-        Button b33 = findViewById(R.id.b_3_3);
+        b33 = findViewById(R.id.b_3_3);
         b33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,7 +165,10 @@ public class GameActivity extends AppCompatActivity {
                 b33.setText(game.mark);
                 b33.setEnabled(false);
                 //game.check();
-                if (game.check()) exit.setVisibility(View.VISIBLE);
+                if (game.check()) {
+                    allButtonEnable();
+                    exit.setVisibility(View.VISIBLE);
+                }
                 t2.setText(game.nextInfo);
             }
         });
@@ -147,7 +182,15 @@ public class GameActivity extends AppCompatActivity {
             }
         });
     }
-    static void exitEnableAllButton(Game game, Button exit){
-        if (game.check()) exit.setVisibility(View.VISIBLE);
+    public void allButtonEnable(){
+        b11.setEnabled(false);
+        b12.setEnabled(false);
+        b13.setEnabled(false);
+        b21.setEnabled(false);
+        b22.setEnabled(false);
+        b23.setEnabled(false);
+        b31.setEnabled(false);
+        b32.setEnabled(false);
+        b33.setEnabled(false);
     }
 }
